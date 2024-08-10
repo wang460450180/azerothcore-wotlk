@@ -99,6 +99,7 @@ bool ChatHandler::HasLowerSecurityAccount(WorldSession* target, uint32 target_ac
     return false;
 }
 
+<<<<<<< HEAD
 void ChatHandler::SendWorldText(std::string_view str)
 {
     std::vector<std::string_view> lines = Acore::Tokenize(str, '\n', true);
@@ -135,6 +136,8 @@ void ChatHandler::SendWorldTextOptional(std::string_view str, uint32 flag)
     }
 }
 
+=======
+>>>>>>> parent of 87f4adf63 (refactor(Core/Chat): Move SendWorldText(optional) to ChatHandler and … (#19501))
 void ChatHandler::SendSysMessage(std::string_view str, bool escapeCharacters)
 {
     std::string msg{ str };

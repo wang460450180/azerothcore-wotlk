@@ -996,7 +996,7 @@ void BattlegroundQueue::BattlegroundQueueAnnouncerUpdate(uint32 diff, Battlegrou
                 uint32 q_min_level = std::min(bracketEntry->minLevel, (uint32) 80);
                 uint32 q_max_level = std::min(bracketEntry->maxLevel, (uint32) 80);
 
-                ChatHandler(nullptr).SendWorldTextOptional(LANG_BG_QUEUE_ANNOUNCE_WORLD, ANNOUNCER_FLAG_DISABLE_BG_QUEUE, bgName.c_str(), q_min_level, q_max_level, qPlayers, MaxPlayers);
+                sWorld->SendWorldTextOptional(LANG_BG_QUEUE_ANNOUNCE_WORLD, ANNOUNCER_FLAG_DISABLE_BG_QUEUE, bgName.c_str(), q_min_level, q_max_level, qPlayers, MaxPlayers);
             }
             else
             {
@@ -1077,7 +1077,7 @@ void BattlegroundQueue::SendMessageBGQueue(Player* leader, Battleground* bg, PvP
                 return;
             }
 
-            ChatHandler(nullptr).SendWorldTextOptional(LANG_BG_QUEUE_ANNOUNCE_WORLD, ANNOUNCER_FLAG_DISABLE_BG_QUEUE, bgName.c_str(), q_min_level, q_max_level, qAlliance + qHorde, MaxPlayers);
+            sWorld->SendWorldTextOptional(LANG_BG_QUEUE_ANNOUNCE_WORLD, ANNOUNCER_FLAG_DISABLE_BG_QUEUE, bgName.c_str(), q_min_level, q_max_level, qAlliance + qHorde, MaxPlayers);
         }
     }
 }
@@ -1128,7 +1128,7 @@ void BattlegroundQueue::SendJoinMessageArenaQueue(Player* leader, GroupQueueInfo
                 return;
             }
 
-            ChatHandler(nullptr).SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, bgName.c_str(), arenatype.c_str(), q_min_level, q_max_level, qPlayers, playersNeed);
+            sWorld->SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, bgName.c_str(), arenatype.c_str(), q_min_level, q_max_level, qPlayers, playersNeed);
         }
     }
     else
@@ -1147,16 +1147,16 @@ void BattlegroundQueue::SendJoinMessageArenaQueue(Player* leader, GroupQueueInfo
         switch (announcementDetail)
         {
         case 3:
-            ChatHandler(nullptr).SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD_JOIN_NAME_RATING, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, TeamName.c_str(), ArenaType, ArenaType, ArenaTeamRating);
+            sWorld->SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD_JOIN_NAME_RATING, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, TeamName.c_str(), ArenaType, ArenaType, ArenaTeamRating);
             break;
         case 2:
-            ChatHandler(nullptr).SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD_JOIN_NAME, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, TeamName, ArenaType, ArenaType);
+            sWorld->SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD_JOIN_NAME, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, TeamName.c_str(), ArenaType, ArenaType);
             break;
         case 1:
-            ChatHandler(nullptr).SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD_JOIN_RATING, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, ArenaType, ArenaType, ArenaTeamRating);
+            sWorld->SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD_JOIN_RATING, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, ArenaType, ArenaType, ArenaTeamRating);
             break;
         default:
-            ChatHandler(nullptr).SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD_JOIN, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, ArenaType, ArenaType);
+            sWorld->SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD_JOIN, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, ArenaType, ArenaType);
             break;
         }
     }
@@ -1187,16 +1187,16 @@ void BattlegroundQueue::SendExitMessageArenaQueue(GroupQueueInfo* ginfo)
         switch (announcementDetail)
         {
         case 3:
-            ChatHandler(nullptr).SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD_EXIT_NAME_RATING, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, TeamName.c_str(), ArenaType, ArenaType, ArenaTeamRating);
+            sWorld->SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD_EXIT_NAME_RATING, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, TeamName.c_str(), ArenaType, ArenaType, ArenaTeamRating);
             break;
         case 2:
-            ChatHandler(nullptr).SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD_EXIT_NAME, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, TeamName, ArenaType, ArenaType);
+            sWorld->SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD_EXIT_NAME, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, TeamName.c_str(), ArenaType, ArenaType);
             break;
         case 1:
-            ChatHandler(nullptr).SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD_EXIT_RATING, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, ArenaType, ArenaType, ArenaTeamRating);
+            sWorld->SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD_EXIT_RATING, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, ArenaType, ArenaType, ArenaTeamRating);
             break;
         default:
-            ChatHandler(nullptr).SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD_EXIT, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, ArenaType, ArenaType);
+            sWorld->SendWorldTextOptional(LANG_ARENA_QUEUE_ANNOUNCE_WORLD_EXIT, ANNOUNCER_FLAG_DISABLE_ARENA_QUEUE, ArenaType, ArenaType);
             break;
         }
     }
