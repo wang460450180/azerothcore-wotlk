@@ -54,6 +54,7 @@ enum Spells
     SPELL_FATAL_ATTRACTION_AURA     = 41001,
     SPELL_FATAL_ATTRACTION_DAMAGE   = 40871,
     SPELL_ENRAGE                    = 45078,
+    SPELL_FRENZY                    = 40683,
     SPELL_SABER_LASH_IMMUNITY       = 43690
 };
 
@@ -73,6 +74,7 @@ struct boss_mother_shahraz : public BossAI
         _canTalk = true;
 
         ScheduleHealthCheckEvent(10, [&] {
+            DoCastSelf(SPELL_FRENZY, true);
             Talk(SAY_EMOTE_FRENZY);
         });
     }
