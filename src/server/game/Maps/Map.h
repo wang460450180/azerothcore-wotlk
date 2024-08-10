@@ -651,7 +651,7 @@ public:
         _updateObjects.erase(obj);
     }
 
-    std::size_t GetActiveNonPlayersCount() const
+    size_t GetActiveNonPlayersCount() const
     {
         return m_activeNonPlayers.size();
     }

@@ -134,7 +134,7 @@ protected:
 
     void HandleNewSocketsProxyReadingOnConnect()
     {
-        std::size_t index = 0;
+        size_t index = 0;
         std::vector<int> newSocketsToRemoveIndexes;
         for (auto sock_iter = _newSockets.begin(); sock_iter != _newSockets.end(); ++sock_iter, ++index)
         {

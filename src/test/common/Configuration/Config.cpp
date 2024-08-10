@@ -16,7 +16,6 @@
  */
 
 #include "Config.h"
-#include "Define.h"
 #include "gtest/gtest.h"
 
 #include <boost/filesystem.hpp>

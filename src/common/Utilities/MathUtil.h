@@ -58,7 +58,7 @@ inline T mean(Container&& c)
 template <typename T>
 inline T median(std::vector<T> a)
 {
-    std::size_t n = a.size();
+    size_t n = a.size();
     // If size of the arr[] is even
     if (n % 2 == 0)
     {

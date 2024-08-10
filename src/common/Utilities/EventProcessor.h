@@ -22,6 +22,7 @@
 #include "Duration.h"
 #include "Random.h"
 #include <map>
+#include <type_traits>
 
 class EventProcessor;
 

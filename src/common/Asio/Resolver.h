@@ -18,6 +18,7 @@
 #ifndef Resolver_h__
 #define Resolver_h__
 
+#include "IoContext.h"
 #include "Optional.h"
 #include <boost/asio/ip/tcp.hpp>
 #include <string>

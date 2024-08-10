@@ -245,9 +245,9 @@ uint32 ReadBuild(int locale)
     std::string text = std::string(m.getPointer(), m.getSize());
     m.close();
 
-    std::size_t pos = text.find("version=\"");
-    std::size_t pos1 = pos + strlen("version=\"");
-    std::size_t pos2 = text.find("\"", pos1);
+    size_t pos = text.find("version=\"");
+    size_t pos1 = pos + strlen("version=\"");
+    size_t pos2 = text.find("\"", pos1);
     if (pos == text.npos || pos2 == text.npos || pos1 >= pos2)
     {
         printf("Fatal error: Invalid  %s file format!\n", filename.c_str());
@@ -277,7 +277,7 @@ uint32 ReadMapDBC()
         exit(1);
     }
 
-    std::size_t map_count = dbc.getRecordCount();
+    size_t map_count = dbc.getRecordCount();
     map_ids.resize(map_count);
     for (uint32 x = 0; x < map_count; ++x)
     {
@@ -1094,12 +1094,12 @@ void ExtractCameraFiles(int locale, bool basicLocale)
 
     // get camera file list from DBC
     std::vector<std::string> camerafiles;
-    std::size_t cam_count = camdbc.getRecordCount();
+    size_t cam_count = camdbc.getRecordCount();
 
-    for (std::size_t i = 0; i < cam_count; ++i)
+    for (size_t i = 0; i < cam_count; ++i)
     {
         std::string camFile(camdbc.getRecord(i).getString(1));
-        std::size_t loc = camFile.find(".mdx");
+        size_t loc = camFile.find(".mdx");
         if (loc != std::string::npos)
         {
             camFile.replace(loc, 4, ".m2");

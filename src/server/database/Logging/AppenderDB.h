@@ -19,7 +19,6 @@
 #define APPENDERDB_H
 
 #include "Appender.h"
-#include <vector>
 
 class AppenderDB : public Appender
 {

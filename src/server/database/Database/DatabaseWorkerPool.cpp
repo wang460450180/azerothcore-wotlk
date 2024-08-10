@@ -151,11 +151,11 @@ bool DatabaseWorkerPool<T>::PrepareStatements()
             else
                 connection->Unlock();
 
-            std::size_t const preparedSize = connection->m_stmts.size();
+            size_t const preparedSize = connection->m_stmts.size();
             if (_preparedStatementSize.size() < preparedSize)
                 _preparedStatementSize.resize(preparedSize);
 
-            for (std::size_t i = 0; i < preparedSize; ++i)
+            for (size_t i = 0; i < preparedSize; ++i)
             {
                 // already set by another connection
                 // (each connection only has prepared statements of it's own type sync/async)
@@ -485,7 +485,7 @@ void DatabaseWorkerPool<T>::Enqueue(SQLOperation* op)
 }
 
 template <class T>
-std::size_t DatabaseWorkerPool<T>::QueueSize() const
+size_t DatabaseWorkerPool<T>::QueueSize() const
 {
     return _queue->Size();
 }

@@ -55,10 +55,10 @@ namespace Acore::Impl::ChatCommands
     inline TokenizeResult tokenize(std::string_view args)
     {
         TokenizeResult result;
-        if (std::size_t delimPos = args.find(COMMAND_DELIMITER); delimPos != std::string_view::npos)
+        if (size_t delimPos = args.find(COMMAND_DELIMITER); delimPos != std::string_view::npos)
         {
             result.token = args.substr(0, delimPos);
-            if (std::size_t tailPos = args.find_first_not_of(COMMAND_DELIMITER, delimPos); tailPos != std::string_view::npos)
+            if (size_t tailPos = args.find_first_not_of(COMMAND_DELIMITER, delimPos); tailPos != std::string_view::npos)
                 result.tail = args.substr(tailPos);
         }
         else

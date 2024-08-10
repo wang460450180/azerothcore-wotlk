@@ -20,7 +20,6 @@
 
 #include "Appender.h"
 #include <atomic>
-#include <vector>
 
 class AppenderFile : public Appender
 {

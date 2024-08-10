@@ -24,7 +24,9 @@
 #ifndef _ACORE_GEOMETRY_H
 #define _ACORE_GEOMETRY_H
 
+#include "Define.h"
 #include <cstdlib>
+#include <iostream>
 #include <math.h>
 
 [[nodiscard]] inline float getAngle(float startX, float startY, float destX, float destY)

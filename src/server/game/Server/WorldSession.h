@@ -25,6 +25,7 @@
 #include "AccountMgr.h"
 #include "AddonMgr.h"
 #include "AuthDefines.h"
+#include "BanMgr.h"
 #include "CircularBuffer.h"
 #include "Common.h"
 #include "DatabaseEnv.h"
@@ -33,7 +34,6 @@
 #include "SharedDefines.h"
 #include "World.h"
 #include <map>
-#include <memory>
 #include <utility>
 
 class Creature;

@@ -27,7 +27,7 @@
 
 namespace ByteConverter
 {
-    template<std::size_t T>
+    template<size_t T>
     inline void convert(char* val)
     {
         std::swap(*val, *(val + T - 1));

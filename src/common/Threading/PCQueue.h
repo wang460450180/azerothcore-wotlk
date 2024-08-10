@@ -18,8 +18,11 @@
 #ifndef _PCQ_H
 #define _PCQ_H
 
+#include <atomic>
 #include <condition_variable>
+#include <mutex>
 #include <queue>
+#include <type_traits>
 
 template <typename T>
 class ProducerConsumerQueue
@@ -48,7 +51,7 @@ public:
         return _queue.empty();
     }
 
-    [[nodiscard]] std::size_t Size() const
+    [[nodiscard]] size_t Size() const
     {
         return _queue.size();
     }

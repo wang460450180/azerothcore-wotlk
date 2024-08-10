@@ -174,7 +174,7 @@ namespace MMAP
         unsigned char* data = (unsigned char*)dtAlloc(fileHeader.size, DT_ALLOC_PERM);
         ASSERT(data);
 
-        std::size_t result = fread(data, fileHeader.size, 1, file);
+        size_t result = fread(data, fileHeader.size, 1, file);
         if (!result)
         {
             LOG_ERROR("maps", "MMAP:loadMap: Bad header or data in mmap {:03}{:02}{:02}.mmtile", mapId, x, y);

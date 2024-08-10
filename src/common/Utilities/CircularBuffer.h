@@ -17,7 +17,7 @@ template <typename T>
 class CircularBuffer
 {
 public:
-    explicit CircularBuffer(std::size_t size) :
+    explicit CircularBuffer(size_t size) :
         buf_(std::unique_ptr<T[]>(new T[size])),
         max_size_(size)
     {
@@ -52,14 +52,14 @@ public:
         return full_;
     }
 
-    [[nodiscard]] std::size_t capacity() const
+    [[nodiscard]] size_t capacity() const
     {
         return max_size_;
     }
 
-    [[nodiscard]] std::size_t size() const
+    [[nodiscard]] size_t size() const
     {
-        std::size_t size = max_size_;
+        size_t size = max_size_;
 
         if (!full_)
         {
@@ -95,9 +95,9 @@ public:
 private:
     std::mutex mutex_;
     std::unique_ptr<T[]> buf_;
-    std::size_t head_ = 0;
-    std::size_t tail_ = 0;
-    const std::size_t max_size_;
+    size_t head_ = 0;
+    size_t tail_ = 0;
+    const size_t max_size_;
     bool full_ = false;
 };
 #endif

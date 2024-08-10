@@ -36,7 +36,7 @@ public:
     void schedule_update(Map& map, uint32 diff, uint32 s_diff);
     void schedule_lfg_update(uint32 diff);
     void wait();
-    void activate(std::size_t num_threads);
+    void activate(size_t num_threads);
     void deactivate();
     bool activated();
     void update_finished();
@@ -51,7 +51,7 @@ private:
 
     std::mutex _lock;
     std::condition_variable _condition;
-    std::size_t pending_requests;
+    size_t pending_requests;
 };
 
 #endif //_MAP_UPDATER_H_INCLUDED
