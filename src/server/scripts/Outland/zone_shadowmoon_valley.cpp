@@ -2221,11 +2221,6 @@ struct dragonmaw_race_npc : public ScriptedAI
         }
     }
 
-    void PathEndReached(uint32 /*pathId*/) override
-    {
-        Reset();
-    }
-
     void UpdateAI(uint32 diff) override
     {
         scheduler.Update(diff);
