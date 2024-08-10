@@ -77,7 +77,7 @@ public:
         if (WorldSession* session = handler->GetSession())
             name = session->GetPlayer()->GetName();
 
-        handler->SendGMText(LANG_GM_ANNOUNCE_COLOR, name, message.data());
+        sWorld->SendGMText(LANG_GM_ANNOUNCE_COLOR, name.c_str(), message.data());
         return true;
     }
 
@@ -92,12 +92,12 @@ public:
     }
 
     // announce to logged in GMs
-    static bool HandleGMAnnounceCommand(ChatHandler* handler, Tail message)
+    static bool HandleGMAnnounceCommand(ChatHandler* /*handler*/, Tail message)
     {
         if (message.empty())
             return false;
 
-        handler->SendGMText(LANG_GM_BROADCAST, message.data());
+        sWorld->SendGMText(LANG_GM_BROADCAST, message.data());
         return true;
     }
 
