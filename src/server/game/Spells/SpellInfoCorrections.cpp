@@ -4806,12 +4806,6 @@ void SpellMgr::LoadSpellInfoCorrections()
         spellInfo->Effects[EFFECT_1].Amplitude = 500;
     });
 
-    // Chromatic Resistance Aura
-    ApplySpellFix({ 41453 }, [](SpellInfo* spellInfo)
-    {
-        spellInfo->Effects[EFFECT_0].MiscValue = 124;
-    });
-
     for (uint32 i = 0; i < GetSpellInfoStoreSize(); ++i)
     {
         SpellInfo* spellInfo = mSpellInfoMap[i];
